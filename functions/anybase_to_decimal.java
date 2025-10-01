@@ -1,0 +1,30 @@
+
+import java.util.*;
+
+public class anybase_to_decimal {
+
+    public static int convert(int n, int b) {
+        int div = 0;
+        int p = 1;
+        while (n != 0) {
+            int r = n % 10;
+               if (r >= b) {
+                throw new IllegalArgumentException("Invalid digit " + r + " for base " + b);
+            }
+            div = div + r * p;
+            p = p * b;
+            n = n / 10;
+        }
+        return div;
+    }
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter number : ");
+        int n = s.nextInt();
+        System.out.println("Enter base : ");
+        int b = s.nextInt();
+        System.out.println("converted number is : " + convert(n, b));
+
+    }
+}
