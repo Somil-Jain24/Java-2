@@ -6,8 +6,9 @@ public class stockspan {
         Stack<Integer> st = new Stack<>();
         for(int i = 1; i<arr.length;i++){
             while(st.size > 0 && arr[i] > arr[st.peek()] ){
-                
+            st.pop();                 
             }
+            st.push();
         }
     }
 }
