@@ -12,7 +12,7 @@ public class insertatmid {
         void insertmid(int idx, int val){
             Node t = new Node(val);
             Node temp = head;
-            for(int i = 1 ; i<idx-1;i++){
+            for(int i = 1 ; i<=idx-1;i++){
                 temp = temp.next;
             }
             t.next = temp.next;
