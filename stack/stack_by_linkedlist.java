@@ -66,13 +66,8 @@ public class stack_by_linkedlist {
         st.push(40);
         st.push(50);
         st.print();
+        st.length();
         System.out.println( st.pop());
-        System.out.println( st.pop());
-        System.out.println( st.pop());
-        System.out.println( st.pop());
-        System.out.println( st.pop());
-        System.out.println( st.pop());
-        // st.print();
         st.length();
     }
 }
