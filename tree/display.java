@@ -10,11 +10,28 @@ class Node {
 }
 
 public class display {
-    private static void print(Node root){
-        if(root == null) return ;
+    private static void print(Node root) {
+        if (root == null)
+            return;
         System.out.print(root.val + " ");
         print(root.left);
         print(root.right);
+    }
+
+    private static int size(Node root) {
+        if (root == null)
+            return 0;
+        return 1 + size(root.left) + size(root.right);
+    }
+
+    private static int levels(Node root) {
+        if (root == null)
+            return 0;
+        return 1 + Math.max(levels(root.left), levels(root.right));
+    }
+
+    private static int height(Node root) {
+        return levels(root) - 1;
     }
 
     public static void main(String[] args) {
@@ -28,11 +45,17 @@ public class display {
         Node g = new Node(10);
         Node h = new Node(20);
 
-        a.left = b; a.right = c;
-        b.left = d; b.right = e;
-        c.left = g; c.right = f;
+        a.left = b;
+        a.right = c;
+        b.left = d;
+        b.right = e;
+        c.left = g;
+        c.right = f;
         e.right = h;
 
+        System.out.println(size(a));
+        System.out.println(levels(a));
+        System.out.println(height(a));
         print(a);
 
     }

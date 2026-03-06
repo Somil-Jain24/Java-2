@@ -1,23 +1,4 @@
-class Node {
-    int val;
-    Node left;
-    Node right;
-
-    Node(int val) {
-        this.val = val;
-    }
-
-}
-
-public class sum {
-    private static int total(Node root) {
-        if (root == null)
-            return 0;
-
-        return root.val + total(root.left) + total(root.right);
-    }
-
-    public static void main(String[] args) {
+ public static void main(String[] args) {
 
         Node a = new Node(1);
         Node b = new Node(41);
@@ -36,8 +17,9 @@ public class sum {
         c.right = f;
         e.right = h;
 
-        System.out.println(total(a));
+        System.out.println(size(a));
+        System.out.println(levels(a));
+        System.out.println(height(a));
+        print(a);
 
     }
-
-}

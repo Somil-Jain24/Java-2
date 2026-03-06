@@ -9,18 +9,25 @@ class Node {
 
 }
 
-public class maximum_value {
-    private static int total(Node root) {
+public class max_and_min_value {
+    private static int max(Node root) {
 
-        if (root == null)
-            return 0;
+        if (root == null) return Integer.MIN_VALUE;
 
-        int max = Math.max(total(root.left), total(root.right));
-        max = Math.max(root.val, max);
-        return max;
+        return Math.max(root.val, Math.max(max(root.left), max(root.right)));
 
     }
 
+      private static int min(Node root) {
+
+        if (root == null) return Integer.MAX_VALUE;
+
+        return Math.min(root.val, Math.min(min(root.left), min(root.right)));
+
+    }
+
+
+  
     public static void main(String[] args) {
 
         Node a = new Node(1);
@@ -40,7 +47,8 @@ public class maximum_value {
         c.right = f;
         e.right = h;
 
-        System.out.println(total(a));
+        System.out.println(max(a));
+        System.out.println(min(a));
 
     }
 
